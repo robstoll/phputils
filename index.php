@@ -5,7 +5,8 @@
  * See file "LICENSE" in the root directory for more information.
  *
  */
-
+namespace ch\tutteli;
+ 
 include __DIR__.'\TypedArray.php';
 
 function test($fnc) {
@@ -101,14 +102,14 @@ test(function(){
 echo 'Array initialisation:<br/>';
 
 //initialisation of a TypedArray - almost like a normal array
-$typedArray = TypedArray::createFromArray(Types::T_CLASS_OR_INTERFACE, [new Foo(), new Foo()], "Foo");
+$typedArray = TypedArray::createFromArray(Types::T_CLASS_OR_INTERFACE, [new Foo(), new Foo()], 'ch\tutteli\Foo');
 var_dump($typedArray);
-$typedArray = TypedArray::createFromArray(Types::T_CLASS_OR_INTERFACE, ['a' => new Foo(), 2 => new Foo()], "Foo");
+$typedArray = TypedArray::createFromArray(Types::T_CLASS_OR_INTERFACE, ['a' => new Foo(), 2 => new Foo()], 'ch\tutteli\Foo');
 var_dump($typedArray);
 
 echo 'Reference test:<br/>';
 
-$typedArray = new TypedArray(Types::T_CLASS_OR_INTERFACE, "Foo");
+$typedArray = new TypedArray(Types::T_CLASS_OR_INTERFACE, 'ch\tutteli\Foo');
 $foo = new Foo();
 $typedArray[] = &$foo;
 var_dump($typedArray);

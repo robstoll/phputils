@@ -5,8 +5,9 @@
  * See file "LICENSE" in the root directory for more information.
  *
  */
+namespace ch\tutteli;
 
-class TypeException extends Exception
+class TypeException extends \Exception
 {   
 }
 
@@ -174,7 +175,7 @@ class TypeCheckerFactory
     }
 }
 
-class TypedArray implements ArrayAccess, Countable
+class TypedArray implements \ArrayAccess, \Countable
 {
     /* @var $typeChecker ITypeChecker */
 
